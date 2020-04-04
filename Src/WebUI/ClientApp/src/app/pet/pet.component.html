@@ -1,0 +1,10 @@
+<div>
+  <h4>{{title}}</h4>
+  <hr/>
+  <div *ngFor="let gender of ownerGender">
+    <h5>{{gender}}</h5>
+    <ul>
+      <li *ngFor="let pet of pets[gender]|orderby:'name':true">{{pet.name}}</li>
+    </ul>
+  </div>
+</div>
