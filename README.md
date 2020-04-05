@@ -10,15 +10,7 @@ Get more details on requirements from http://agl-developer-test.azurewebsites.ne
 
 ## Implementation ##
 
-|-----------------------------------------------------------------------------------|
-|						Web client/ Presentation									|
-|		|-------------------------------------------------------------------|		|
-|		|																	|		|
-|-------|					Core or Application Layer						|-------|
-|		|																	|		|
-|		|------------------------------|------------------------------------|		|
-|		Service	Layer				   |			Infrastructure					|
-|--------------------------------------|--------------------------------------------|
+![Architecture](./docs/architecture.png)
 
 ## Tools and Technology used ##
 
@@ -36,13 +28,21 @@ Get more details on requirements from http://agl-developer-test.azurewebsites.ne
 * Build and run the application. First run will take time as all nuget and npm dependencies has to be downloaded
 * After successful build, you should be able to access the application using [http://localhost:59750/](http://localhost:59750/)
 
-####API####
+###API###
 
 Some valid service urls :
 
 * [http://localhost:59750/api/person/pet/cat](http://localhost:59750/api/person/pet/cat)
 * [http://localhost:59750/api/person/pet/dog](http://localhost:59750/api/person/pet/dog)
 * [http://localhost:59750/api/person/pet/fish](http://localhost:59750/api/person/pet/fish)
+
+###Tests###
+
+![Service Tests](./docs/NUnitTests.png)
+
+* To run UI tests Run `ng test` 
+
+![UI Tests](./docs/Jasmine.png)
 
 ## Further improvements ##
 
