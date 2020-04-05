@@ -14,7 +14,8 @@ export class PetComponent implements OnInit {
   pets = {};
   ownerGender: string[];
 
-  constructor(@Inject(PetService) private petService: PetService) { }
+  public constructor(@Inject(PetService) private petService: PetService) {
+  }
 
   ngOnInit() {
     this.getCatsAndOwners();

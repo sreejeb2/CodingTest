@@ -14,16 +14,16 @@ namespace AGLCodingTest.Infrastructure.Services
 {
     public class PersonService : IPersonService
     {
-        private readonly ITestableHttpClient _client;
+        private readonly ITestableHttpClient client;
 
         public PersonService(ITestableHttpClient client)
         {
-            _client = client;
+            this.client = client;
         }
 
         public async Task<PetsViewModel> GetPetsByOwnerGenderAsync(AnimalType petType)
         {
-            var responseText = await _client.GetAsync("people.json");
+            var responseText = await client.GetAsync("people.json");
             var people = JsonConvert.DeserializeObject<IList<Person>>(responseText);
 
             var petsWithMaleOwners = people.Where(person => person.Gender == Gender.Male && person.Pets != null && person.Pets.Any(pet => pet.Type == petType))
