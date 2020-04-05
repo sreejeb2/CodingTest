@@ -10,7 +10,7 @@ Get more details on requirements from http://agl-developer-test.azurewebsites.ne
 
 ## Implementation ##
 
-![Architecture](./docs/architecture.png)
+![Architecture](./docs/architecture.PNG)
 
 ## Tools and Technology used ##
 
