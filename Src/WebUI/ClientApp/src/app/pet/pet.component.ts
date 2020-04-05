@@ -11,7 +11,7 @@ import { PetService } from './pet.service';
 export class PetComponent implements OnInit {
 
   title = 'List of cats in alphabetical order under a heading of the gender of their owner';
-  pets = {};
+  petsByOwnerGender = {};
   ownerGender: string[];
 
   public constructor(@Inject(PetService) private petService: PetService) {
@@ -22,9 +22,11 @@ export class PetComponent implements OnInit {
   }
 
   public getCatsAndOwners() {
-    this.petService.getPets('Cat').subscribe((result: any)=> {
-      this.pets = result.petsByOwnerGender;
-      this.ownerGender = Object.keys(this.pets);
+    this.petService.getPets('Cat').subscribe((result: any) => {
+      // Result can be get into a model if required. Not doing this as we are interested in only one property
+      this.petsByOwnerGender = result.petsByOwnerGender;
+      // Key represent owner gender
+      this.ownerGender = Object.keys(this.petsByOwnerGender);
     });
   }
 }

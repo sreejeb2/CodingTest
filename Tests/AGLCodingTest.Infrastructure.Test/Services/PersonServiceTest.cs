@@ -1,11 +1,10 @@
-using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Moq;
+using NUnit.Framework;
 using AGLCodingTest.Application.Common.Interfaces;
 using AGLCodingTest.Application.Models;
 using AGLCodingTest.Infrastructure.Services;
-using Moq;
-using NUnit.Framework;
 
 namespace AGLCodingTest.Infrastructure.Test.Services
 {

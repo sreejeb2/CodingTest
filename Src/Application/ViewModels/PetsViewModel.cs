@@ -1,32 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using AGLCodingTest.Application.Models;
 
 namespace AGLCodingTest.Application.ViewModels
 {
+    /// <summary>
+    /// Used to pass presentable form of data
+    /// </summary>
     public class PetsViewModel
     {
-        public PetsViewModel()
-        {
-            //this.PetsWithMaleOwners = new List<Pet>();
-            //this.PetsWithFemaleOwners = new List<Pet>();
-        }
-
         public PetsViewModel(IEnumerable<Pet> petsWithMaleOwners, IEnumerable<Pet> petsWithFemaleOwners)
         {
-            //this.PetsWithMaleOwners = petsWithMaleOwners;
-            //this.PetsWithFemaleOwners = petsWithFemaleOwners;
             this.PetsByOwnerGender = new Dictionary<string, IEnumerable<Pet>>();
             this.PetsByOwnerGender.Add("Male", petsWithMaleOwners);
             this.PetsByOwnerGender.Add("Female", petsWithFemaleOwners);
         }
 
-        //public IEnumerable<Pet> PetsWithMaleOwners { get; }
-
-        //public IEnumerable<Pet> PetsWithFemaleOwners { get; }
-
-
+        /// <summary>
+        /// Holds all the pets using owner gender as the key
+        /// </summary>
         public Dictionary<string, IEnumerable<Pet>> PetsByOwnerGender { get; }
     }
 }

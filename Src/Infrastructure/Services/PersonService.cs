@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AGLCodingTest.Application.Common.Interfaces;
 using AGLCodingTest.Application.Common.Models;
@@ -14,6 +12,7 @@ namespace AGLCodingTest.Infrastructure.Services
 {
     public class PersonService : IPersonService
     {
+        // Hold the http client instance injected
         private readonly ITestableHttpClient client;
 
         public PersonService(ITestableHttpClient client)
@@ -21,6 +20,11 @@ namespace AGLCodingTest.Infrastructure.Services
             this.client = client;
         }
 
+        /// <summary>
+        /// Returns all the pets grouped by their owner gender
+        /// </summary>
+        /// <param name="petType">Can be one of the <see cref="AnimalType"/> values</param>
+        /// <returns></returns>
         public async Task<PetsViewModel> GetPetsByOwnerGenderAsync(AnimalType petType)
         {
             var responseText = await client.GetAsync("people.json");
